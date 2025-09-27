@@ -37,12 +37,21 @@ struct ContentView: View {
                     }
                 }) {
                     Text("Login")
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]),
+                                           startPoint: .leading,
+                                           endPoint: .trailing)
+                        )
+                        .cornerRadius(12)
+                        .shadow(color: Color.purple.opacity(0.4), radius: 8, x: 0, y: 4)
                 }
+                .scaleEffect(isLoggedIn ? 0.95 : 1.0) // лёгкая анимация при нажатии
+                .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0), value: isLoggedIn)
+
                 
                 Spacer()
             }
