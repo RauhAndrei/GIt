@@ -4,6 +4,13 @@ struct ProfileScreen: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
+                // Аватарка
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    .foregroundColor(.blue)
+                    .padding(.top, 40)
+                
                 // Имя и email
                 Text("Andrei Rauh")
                     .font(.title)
